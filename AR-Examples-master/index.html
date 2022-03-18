@@ -22,7 +22,7 @@
     -->
 
 
-
+    <center><img src="C:\Users\art12\Desktop\Necessary\My Progects\WebXR\AR-Examples-master\1.jpg" onclick="createCube();" alt="700"></center>
     <script>
 
         var scene, camera, renderer, clock, deltaTime, totalTime;
@@ -147,12 +147,19 @@
 
     </script>
 
-    <center><button onclick="createCube();" alt="700">createCube</button></center>
+
     <script>
         // Новые функции
 
         function createCube() {
-            alert("Whoo!");
+            alert("Начал");
+
+            markerRoot1 = new THREE.Group();
+            scene.add(markerRoot1);
+            let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
+                type: 'pattern', patternUrl: "data/hiro.patt",
+            })
+
             let geometry1 = new THREE.CubeGeometry(1, 1, 1);
             let material1 = new THREE.MeshNormalMaterial({
                 transparent: true,
@@ -161,11 +168,10 @@
             });
 
             mesh1 = new THREE.Mesh(geometry1, material1);
-            mesh1.position.x = 0;
-            mesh1.position.y = 0;
-            mesh1.position.z = 0;
+            mesh1.position.y = 0.5;
 
             markerRoot1.add(mesh1);
+            alert("Закончил!");
         }
     </script>
 

@@ -153,25 +153,21 @@
 
         function createCube() {
 
-            markerRoot = new THREE.Group();
-            scene.add(markerRoot);
-            let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
-                type: 'pattern', patternUrl: "data/hiro.patt",
-            })
-            let geometry1 = new THREE.CubeGeometry(1, 1, 1);
-            let material1 = new THREE.MeshNormalMaterial({
-                transparent: true,
-                opacity: 0.5,
-                side: THREE.DoubleSide
-            });
+            const geometry = new THREE.BoxGeometry(1, 1, 1);
+            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 
-            mesh1 = new THREE.Mesh(geometry1, material1);
-            mesh1.position.x = 2;
-            mesh1.position.y = 2;
-            mesh1.position.z = 0;
+            const cubeA = new THREE.Mesh(geometry, material);
+            cubeA.position.set(100, 100, 0);
 
-            markerRoot.add(mesh1);
-            alert("END");
+            const cubeB = new THREE.Mesh(geometry, material);
+            cubeB.position.set(-100, -100, 0);
+
+            const group = new THREE.Group();
+            group.add(cubeA);
+            group.add(cubeB);
+
+            scene.add(group);
+            alert("END"); 
         }
     </script>
 

@@ -21,30 +21,6 @@
       Based on the AR.js library and examples created by Jerome Etienne: https://github.com/jeromeetienne/AR.js/
     -->
 
-    <center><button onclick="createCube();">createCube</button></center>
-
-    <script>
-        // Новые функции
-
-        function createCube() {
-            let geometry1 = new THREE.CubeGeometry(1, 1, 1);
-            let material1 = new THREE.MeshNormalMaterial({
-            	transparent: true,
-            	opacity: 0.5,
-            	side: THREE.DoubleSide
-            });
-
-            mesh1 = new THREE.Mesh(geometry1, material1);
-            mesh1.position.x = 0;
-            mesh1.position.y = 0;
-            mesh1.position.z = 0;
-
-            markerRoot1.add(mesh1);
-            alert("Whoo!");
-        }
-    </script>
-
-
 
 
     <script>
@@ -168,9 +144,30 @@
             update();
             render();
         }
-}
 
     </script>
-</body>
 
+    <center><button onclick="createCube();" alt="700">createCube</button></center>
+    <script>
+        // Новые функции
+
+        function createCube() {
+            alert("Whoo!");
+            let geometry1 = new THREE.CubeGeometry(1, 1, 1);
+            let material1 = new THREE.MeshNormalMaterial({
+                transparent: true,
+                opacity: 0.5,
+                side: THREE.DoubleSide
+            });
+
+            mesh1 = new THREE.Mesh(geometry1, material1);
+            mesh1.position.x = 0;
+            mesh1.position.y = 0;
+            mesh1.position.z = 0;
+
+            markerRoot1.add(mesh1);
+        }
+    </script>
+
+</body>
 </html>

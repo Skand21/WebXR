@@ -157,10 +157,10 @@
             const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 
             const cubeA = new THREE.Mesh(geometry, material);
-            cubeA.position.set(100, 100, 0);
+            cubeA.position.set(0, 0, 0);
 
             const cubeB = new THREE.Mesh(geometry, material);
-            cubeB.position.set(-100, -100, 0);
+            cubeB.position.set(0, -10, 0);
 
             const group = new THREE.Group();
             group.add(cubeA);

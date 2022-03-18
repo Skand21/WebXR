@@ -149,12 +149,15 @@
 
     <script>
         // Новые функции
+        var markerRoot, markerRoot2;
 
         function createCube() {
 
-            markerRoot1 = new THREE.Group();
-            scene.add(markerRoot1);
-
+            markerRoot = new THREE.Group();
+            scene.add(markerRoot);
+            let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+                type: 'pattern', patternUrl: "data/hiro.patt",
+            })
             let geometry1 = new THREE.CubeGeometry(1, 1, 1);
             let material1 = new THREE.MeshNormalMaterial({
                 transparent: true,
@@ -167,7 +170,7 @@
             mesh1.position.y = 2;
             mesh1.position.z = 0;
 
-            markerRoot1.add(mesh1);
+            markerRoot.add(mesh1);
             alert("END");
         }
     </script>

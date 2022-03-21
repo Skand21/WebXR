@@ -154,6 +154,9 @@
     <script>
         // Новые функции
         function createCube() {
+            alert(camera.position.x + " - камера по X");
+            alert(camera.position.x + " - камера по Y");
+            alert(camera.position.x + " - камера по Z");
 
             const geometry = new THREE.BoxGeometry(1, 1, 1);
             const material = new THREE.MeshBasicMaterial({ color: 0x00FFFF });

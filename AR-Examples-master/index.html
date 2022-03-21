@@ -42,6 +42,10 @@
             scene.add(ambientLight);
 
             camera = new THREE.Camera();
+            camera.position.x = 0;
+            camera.position.y = 0;
+            camera.position.z = 0;
+
             scene.add(camera);
 
             renderer = new THREE.WebGLRenderer({
@@ -149,18 +153,17 @@
 
     <script>
         // Новые функции
-        var markerRoot, markerRoot2;
-
         function createCube() {
 
             const geometry = new THREE.BoxGeometry(1, 1, 1);
-            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            const material = new THREE.MeshBasicMaterial({ color: 0x00FFFF });
+            const material2 = new THREE.MeshBasicMaterial({ color: 0x008000 });
 
             const cubeA = new THREE.Mesh(geometry, material);
             cubeA.position.set(0, 0, 0);
 
-            const cubeB = new THREE.Mesh(geometry, material);
-            cubeB.position.set(0, -10, 0);
+            const cubeB = new THREE.Mesh(geometry, material2);
+            cubeB.position.set(0, -1, 0);
 
             const group = new THREE.Group();
             group.add(cubeA);
